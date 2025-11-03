@@ -11,7 +11,7 @@ from typing import Optional
 # 1. UserBase: Modelo base con validaciones comunes
 # 2. UserCreate: Modelo para crear un nuevo usuario
 # 3. UserUpdate: Modelo para actualizar un usuario existente
-# 4. User: Modelo completo con ID
+# 4. User: Modelo base con ID (pero sin contraseña)
 
 
 class UserBase(BaseModel):
