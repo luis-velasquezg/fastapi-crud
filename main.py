@@ -5,10 +5,9 @@ from models import User, UserCreate, UserUpdate
 app = FastAPI(title="Simple FastAPI CRUD", version="1.0")
 
 # Base de datos temporal
-# users_db: List[User] = ["Luis", "Maria", "Jose"]
 users_db: List[User] = [
-    User(id=1, name="Luis", email="luis@example.com"),
-    User(id=2, name="Maria", email="maria@example.com"),
+    User(id=1, name="María", email="maria@example.com"),
+    User(id=2, name="Luis", email="luis@example.com"),
     User(id=3, name="Jose", email="jose@example.com"),
     User(id=4, name="Ana", email="ana@example.com"),
 ]
