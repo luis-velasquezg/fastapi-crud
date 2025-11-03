@@ -2,6 +2,13 @@ from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
 
 
+# Modelos de usuario:
+# 1. UserBase: Modelo base con validaciones comunes
+# 2. UserCreate: Modelo para crear un nuevo usuario
+# 3. UserUpdate: Modelo para actualizar un usuario existente
+# 4. User: Modelo completo con ID
+
+
 class UserBase(BaseModel):
     name: str = Field(
         ..., min_length=2, max_length=50, description="Nombre del usuario"
