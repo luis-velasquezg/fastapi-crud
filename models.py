@@ -1,6 +1,11 @@
 from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
 
+# Campos de Usuario
+# name: Nombre del usuario
+# email: Correo electrónico válido
+# password: Contraseña segura
+# id: Identificador único del usuario
 
 # Modelos de usuario:
 # 1. UserBase: Modelo base con validaciones comunes
