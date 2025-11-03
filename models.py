@@ -1,17 +1,6 @@
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, EmailStr, Field, validator
+import re
 from typing import Optional
-
-# Campos de Usuario
-# name: Nombre del usuario
-# email: Correo electrónico válido
-# password: Contraseña segura
-# id: Identificador único del usuario
-
-# Modelos de usuario:
-# 1. UserBase: Modelo base con validaciones comunes
-# 2. UserCreate: Modelo para crear un nuevo usuario
-# 3. UserUpdate: Modelo para actualizar un usuario existente
-# 4. User: Modelo base con ID (pero sin contraseña)
 
 
 class UserBase(BaseModel):
@@ -23,8 +12,26 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     password: str = Field(
-        ..., min_length=6, description="Contraseña con mínimo 6 caracteres"
+        ...,
+        min_length=8,
+        max_length=64,
+        description="Contraseña con mínimo 8 caracteres",
     )
+
+    @validator("password")
+    def validate_password(cls, value):
+        # Requisitos mínimos de complejidad
+        if not re.search(r"[A-Z]", value):
+            raise ValueError(
+                "La contraseña debe contener al menos una letra mayúscula."
+            )
+        if not re.search(r"[a-z]", value):
+            raise ValueError(
+                "La contraseña debe contener al menos una letra minúscula."
+            )
+        if not re.search(r"\d", value):
+            raise ValueError("La contraseña debe contener al menos un número.")
+        return value
 
 
 class UserUpdate(BaseModel):
