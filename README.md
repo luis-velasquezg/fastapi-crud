@@ -20,7 +20,7 @@ Aplicación sencilla de FastAPI que muestra operaciones CRUD básicas con una AP
 ### Modelos de usuario:
 
 1. `UsuarioBase`: Modelo base con validaciones predeterminadas y personalizadas
-2. `UsuarioCreate`: Modelo para crear un nuevo usuario 
+2. `UsuarioCreate`: Modelo para crear un nuevo usuario
 3. `UsuarioUpdate`: MModelo para actualizar un usuario existente
 4. `Usuario`: Modelo base con ID
 
