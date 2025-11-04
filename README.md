@@ -11,17 +11,18 @@ Aplicación sencilla de FastAPI que muestra operaciones CRUD básicas con una AP
 
 ### Campos de Usuario
 
-- `name`: Nombre del usuario
+- `id`: Identificación
+- `nombre`: Nombre del usuario _(entre 2 y 50 caracteres)_
 - `email`: Correo electrónico válido
-- `password`: Contraseña segura _(mínimo 8 caracteres, que contenga mayúsculas, minúsculas y números)_
-- `id`: Identificador único del usuario
+- `telefono`: Teléfono _(entre 7 y 15 dígitos)_
+- `edad`: Edad _(entre 0 y 120 años)_
 
 ### Modelos de usuario:
 
-1. `UserBase`: Modelo base con validaciones comunes
-2. `UserCreate`: Modelo para crear un nuevo usuario
-3. `UserUpdate`: Modelo para actualizar un usuario existente
-4. `User`: Modelo base con ID (sin contraseña)
+1. `UsuarioBase`: Modelo base con validaciones predeterminadas y personalizadas
+2. `UsuarioCreate`: Modelo para crear un nuevo usuario 
+3. `UsuarioUpdate`: MModelo para actualizar un usuario existente
+4. `Usuario`: Modelo base con ID
 
 ## 🛠️ Instalación
 
