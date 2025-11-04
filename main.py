@@ -63,6 +63,9 @@ def actualizar_usuario(id: int, datos: UsuarioUpdate):
     """
     Actualiza un usuario existente.
 
+    Para actualizar un usuario existente, ingrese el ID del usuario y los campos a modificar.
+
+
     Mejoras implementadas:
     - Usa model_copy() con update para mantener validaciones de Pydantic
     - Valida email único antes de aplicar cambios
