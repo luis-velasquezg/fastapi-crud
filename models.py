@@ -58,7 +58,7 @@ class UsuarioBase(BaseModel):
     nombre: str = Field(..., description="Nombre del usuario")
     email: EmailStr = Field(..., description="Correo electrónico válido")
     telefono: Optional[str] = Field(None, description="Número de teléfono")
-    edad: Optional[int] = Field(None, ge=0, le=120, description="Edad del usuario")
+    edad: Optional[int] = Field(None, description="Edad del usuario")
 
     _validar_nombre = field_validator("nombre")(ValidacionesComunes.validar_nombre)
     _validar_edad = field_validator("edad")(ValidacionesComunes.validar_edad)
