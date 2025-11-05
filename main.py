@@ -107,7 +107,7 @@ def actualizar_usuario(id: int, datos: UsuarioUpdate):
     return usuario_actualizado
 
 
-@app.delete("/usuarios/{id}", status_code=status.HTTP_204_NO_CONTENT)
+@app.delete("/usuarios/{id}", status_code=status.HTTP_200_OK)
 def eliminar_usuario(id: int):
     global usuarios
     usuario = next((u for u in usuarios if u.id == id), None)
@@ -117,3 +117,4 @@ def eliminar_usuario(id: int):
         )
 
     usuarios = [u for u in usuarios if u.id != id]
+    return {"message": f"Usuario con ID:{id} eliminado correctamente"}
