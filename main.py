@@ -117,4 +117,4 @@ def eliminar_usuario(id: int):
         )
 
     usuarios = [u for u in usuarios if u.id != id]
-    return {"message": f"Usuario con ID:{id} eliminado correctamente"}
+    return {"detail": f"Usuario con ID:{id} eliminado correctamente"}
